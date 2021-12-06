@@ -6,8 +6,8 @@ This is an algorithm to process the product X=V1×V2 of an m×n matrix V1 and an
 Since OpenMP 4.5, array reduction has been possible in C. However, depending on your environment, you may not be able to use it because the OpenMP version is too old. In this section, we introduce a method using temporary variables.
 
 ### Main part of the code
-```C {.line-numbers}
-## The main part of the code ``C {.line-numbers}
+```C
+#pragma omp parallel private(i)
   {
     for (i = 0; i < m; i++) {
       k = 0.0;
